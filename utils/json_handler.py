@@ -1,6 +1,4 @@
-import numbers
 import ujson as json
-
 
 
 def read_data(path: str) -> list[dict]:
@@ -14,7 +12,16 @@ def read_data(path: str) -> list[dict]:
 
 def write_data(path: str):
     data = []
-    fields = ["type", "date", "value", "cpf", "card", "date", "store_name","owner_store"]
+    fields = [
+        "type",
+        "date",
+        "value",
+        "cpf",
+        "card",
+        "time",
+        "owner_store",
+        "store_name",
+    ]
     with open(path) as fh:
         for line in fh:
             description = line.strip().split(None, 0)
@@ -26,6 +33,6 @@ def write_data(path: str):
             data_string.update({fields[4]: description[0][30:42]})
             data_string.update({fields[5]: description[0][42:48]})
             data_string.update({fields[6]: description[0][48:62]})
-            data_string.update({fields[7]: description[0][62:81]})
+            data_string.update({fields[7]: description[0][62:80]})
             data.append(data_string)
-        return data   
+        return data

@@ -8,4 +8,4 @@ if __name__ == "__main__":
     test = write_data(FILEPATH)
     final = json.dumps(test, indent=2)
     
-    print(test)
+    print(final)
