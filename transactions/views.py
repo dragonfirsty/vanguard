@@ -6,7 +6,7 @@ from .models import Transactions
 class TransactionsView(TraitDataMixin,ListCreateAPIView):
     serializer_class = TransactionsSerializer
     queryset = Transactions.objects.all()
-
+    
 
 class TransactionsDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = TransactionsSerializer

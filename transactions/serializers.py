@@ -5,8 +5,8 @@ from .models import Transactions
 
 class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:
-        model: Transactions
-        fields = ["__all__"]
+        model = Transactions
+        fields = "__all__"
         extra_kwargs = {"uuid": {"read_only": True}}
 
     # def create(self, validated_data):
